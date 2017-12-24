@@ -1,0 +1,30 @@
+[user]
+        name = "Matt Campbell"
+        email = "matthewcampbell508@gmail.com"
+[credential]
+        helper = cache --timeout=3600
+[core]
+        excludesfile = ~/.gitignore_global
+        editor = vim
+        autocrlf = input
+[alias]
+        s = status
+        co = checkout
+        cb = checkout -b
+        ci = commit
+        all = add .
+        aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+        cl = clone
+
+        #pushing / pulling
+        pf = push --force-with-lease
+        fetchp = fetch --all --prune
+
+        #rebasing
+        rbi = rebase -i master
+        rbcontinue = rebase --continue
+        rbabort = rebase --abort
+
+        #log
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        lg = log --oneline --graph --decorate --all
